@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Welcome to indian railways
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <link rel ="icon" href="{% static 'favicon.ico' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <div class="flex-container">
+            <nav class="middle">
+                <ul>
+                    <li><h3 class="big"><a href="enquiry">Indian railway enquiry</a></h3></li>
+                    <li><a href="PNR Enquiry">Pnr enquiry</a></li>
+                    <li><a href="reserved trains">reserved trains between stations</a></li>
+                    <li><a href="seat">seat availabilty</a></li>
+                    <li><a href="fare">fare enquiry</a></li>
+                    <li><a href="reserved">reserved train schedule</a></li>
+                </ul>
+            </nav>
+        </div> 
+        <div class="color3">
+            <div class="change2">
+                <img src="{% static 'favicon/favicon.ico' %}" class="logo">
+                <h3 class="change">Indian railway passenger reservation enquiry</h3>
+                <img src="{% static 'favicon/india.gif' %}" class ="logo1">
+            </div>
+            <marquee>Please help Indian railways and government of India in moving towards a digitized and cashless economy. Eradicate black money.</marquee>
+            <div class="shift">
+            </div>
+            <div class="list">
+                <ul class="bt">
+                    <li><button type="button" class="btn">Services</button></li>
+                    <li class="mar"><button type="button" class="btn2">information</button></li>
+                </ul>
+            </div>
+            <div class="logo4">
+                <p align="center" style="font-size:200%;" class="btn1">passenger current status enquiry</p>
+            </div>
+            <div class="fin">
+                <h3 class="change8" align="center">Enter the PNR for your booking below to get the current status. You will find it on the top left corner of the ticket</h3>
+            </div><br><br>
+            <div class="change9">
+                <p class="change11" style="font-size:125%;">
+                    enter pnr no.
+                </p>
+                <form class="form1" action="{% url 'home' %}" method = "POST">
+                    {% csrf_token %}   
+                    <input class="change12" type="text" placeholder="ENTER PNR NO." name="pnr">
+            <div class="change13">
+                <ul class="change15">
+                    <li><button type="submit" class="btn5">Submit</button></li>
+                    <li class="change14"><button type="reset" class="btn6">clear</button></li>
+                </ul>
+            </div>
+            </form>
+            </div>
+            <hr>
+            <P align="center" class="change18">Copyright © 2017, Centre For Railway Information Systems, Designed and Hosted by CRIS</P>
+        </div>
+    </body>
+</html>
